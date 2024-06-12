@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 log_file = Variable.get("log_file")
 
-def sendExceptionEmail():
+def send_exception_email():
     if os.path.exists(log_file) and os.path.getsize(log_file) > 0:
         # read log file
         with open(log_file, 'r') as file:
@@ -30,11 +30,11 @@ default_args = {
     'max_retries': 0,
 }
 
-with DAG(dag_id='sendExceptionEmail', default_args=default_args, schedule_interval='30 0 * * *', max_active_runs=1, catchup=False) as dag:
+with DAG(dag_id='send_exception_email', default_args=default_args, schedule_interval='30 0 * * *', max_active_runs=1, catchup=False) as dag:
 
     task0 = PythonOperator(
-        task_id='sendExceptionEmail',
-        python_callable=sendExceptionEmail
+        task_id='send_exception_email',
+        python_callable=send_exception_email
     )
 
     task0
