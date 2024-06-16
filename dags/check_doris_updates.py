@@ -1,6 +1,6 @@
-from airflow import DAG # type: ignore
-from airflow.operators.python import PythonOperator # type: ignore
-from airflow.models import Variable # type: ignore
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from airflow.models import Variable
 from datetime import datetime, timedelta
 import pytz
 import pymysql
