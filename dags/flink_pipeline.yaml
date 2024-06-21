@@ -1,0 +1,10 @@
+host: http://localhost:8081
+jars:
+  - jar_id: xxx_xxx_flink-1.0.jar
+    jobs:
+      - entry_class: com.examples.entry.KafkaToKafka
+        program_file: https://storage.googleapis.com/xxx/KafkaToKafka.yaml
+        job_name: kafka(topic-1) -> kafka(topic-2)
+      - entry_class: com.examples.entry.KafkaToDoris
+        program_file: https://storage.googleapis.com/xxx/KafkaToDoris.yaml
+        job_name: kafka(topic-1) -> doris(table-1)
