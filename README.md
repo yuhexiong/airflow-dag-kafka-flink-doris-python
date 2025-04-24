@@ -10,11 +10,6 @@ use airflow to maintain operation of pipeline and database.
 
 ## Run
 
-### Run Docker
-```
-docker compose up -d
-```
-
 ### ENV
 setting config/airflow.cfg
 ```
@@ -25,6 +20,11 @@ smtp_user = youremail@gmail.com
 smtp_password = pass
 smtp_port = 587
 smtp_mail_from = youremail@gmail.com
+```
+
+### Run Docker
+```
+docker compose up -d
 ```
 
 ### UI Page
